@@ -1,0 +1,37 @@
+1. Install Java:
+Apache Kafka requires Java to run. Download and install the latest version of Java Development Kit (JDK) for Windows from the official Oracle website: (https://download.oracle.com/java/22/latest/jdk-22_windows-x64_bin.msi)
+
+
+2. Download Kafka:
+Download the latest stable release of Kafka for Windows. (https://downloads.apache.org/kafka/3.7.0/kafka_2.12-3.7.0.tgz)
+Extract the downloaded archive to your desired location (e.g., C:\kafka).
+
+3. Configure Environment Variables: (if it auto added then ignore it)
+
+Set the JAVA_HOME environment variable to point to the directory where Java is installed (e.g., C:\Program Files\Java\jdk-15).
+Add the Kafka bin directory to the system PATH variable. For example, if you extracted Kafka to C:\kafka, add C:\kafka\bin to the PATH variable.
+
+4. Start Zookeeper:
+Kafka uses Zookeeper for managing and coordinating the Kafka brokers & Open a command prompt as an administrator.
+Navigate to the Kafka directory & Start Zookeeper by running the following command:
+C:\kafka> .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+5. Start Kafka Broker:
+With Zookeeper running, you can start Kafka broker(s).
+Open another command prompt as an administrator & Navigate to the Kafka directory & Start Kafka broker by running the following command:
+C:\kafka> .\bin\windows\kafka-server-start.bat .\config\server.properties
+
+6. Create Topics:
+Open a new command prompt as an administrator.
+Navigate to the Kafka directory & Use the following command to create a topic named "test-topic":
+C:\kafka> .\bin\windows\kafka-topics.bat --create --zookeeper localhost:9092 --replication-factor 1 --partitions 1 --topic test-topic
+
+7. Produce and Consume Messages:
+Open two new command prompts as administrators.
+
+Navigate to the Kafka directory & In one window, run a producer to send messages to the topic:
+.\bin\windows\kafka-console-producer.bat --bootstrap-server localhost:9092 --topic test-topic
+
+( this consumer only for testing using cmd, but in our project we are reading consumer input using scrip (kafka_consumer.py)
+In the other window, run a consumer to receive messages from the topic:
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test-topic --from-beginning

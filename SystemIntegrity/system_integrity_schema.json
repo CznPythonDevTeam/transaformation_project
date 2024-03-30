@@ -1,0 +1,56 @@
+{
+  "TenantID":"",
+  "Telemetry source":"",
+  "Telemetry type":"",
+  "Telemetry version":"",
+  "workload_id":{
+    "source": "APPLICATION_INSTANCE",
+    "key": "serviceInstanceId"
+  },
+  "IP address":{
+    "source": "APPLICATION_INSTANCE",
+    "key": "serverNetworkInfo.ipAddress"
+  },
+  "hostname":{
+    "source": "APPLICATION_INSTANCE",
+    "key": "serviceInstanceAlias"
+  },
+  "CPUID":"",
+  "OS type":{
+    "source": "APPLICATION_INSTANCE",
+    "key": "operatingSystem.name"
+  },
+  "Kernel version":{
+    "source": "APPLICATION_INSTANCE",
+    "key": "operatingSystem.version"
+  },
+  "timestamp":"",
+  "ISV":{
+    "source": "ds_installer",
+    "key": "publisher"
+  },
+  "Local":"",
+  "JIT Complied":"",
+  "Reputation":{
+    "source": "process_detail",
+    "key": "threatVerificationDetail.status"
+  },
+  "Reputation Description": {
+    "source": "process_detail",
+    "key": "threatVerificationDetail.message"
+  },
+  "Sandbox":"",
+  "ISV Name(s)":"",
+  "ISV Corporate URL(s)":"",
+  "ISV Download URL(s)":"",
+  "Owned Package Name(s)":"",
+  "Owned Package Version":"",
+  "Package Checksum":"",
+  "Enterprise Name(s)":"",
+  "JIT Compiler Name":"",
+  "JIT Compiler Version":"",
+  "Source Code":"",
+  "Directory(ies)":"",
+  "File(s)":"",
+  "Object Code":""
+}
